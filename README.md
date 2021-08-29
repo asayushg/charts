@@ -26,7 +26,7 @@ Step 2. Add the dependency
 <h2 id="documentation">Documentation :notebook_with_decorative_cover:</h2>
 <h4> 1. Pie Chart </h4>
 
-Add the PieChart Custom View in your layout as:
+Add the PieChart View in your layout as:
 ``` 
 <saini.ayush.chart.PieChart
     android:id="@+id/pieChart"
@@ -35,7 +35,7 @@ Add the PieChart Custom View in your layout as:
     .../>
 ```
 
-Create a list of Slice with percentage and color and submit to custom view with border width and color as:
+Create a list of Slice with percentage and color and submit to PieChart view with border width and color as:
 ``` 
 val list = ArrayList<PieChart.Slice>()
 list.add(
