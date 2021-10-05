@@ -21,10 +21,7 @@ Step 2. Add the dependency
 
 <h2 id="examples">Examples :eyes:</h2>
 
-Pie Chart
 <img src="pie-chart-example.gif" width="250"/>
-
-Pie Chart with Border
 <img src="pie-chart-border-example.gif" width="250"/>
 
 <h2 id="documentation">Documentation :notebook_with_decorative_cover:</h2>
