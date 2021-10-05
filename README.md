@@ -44,9 +44,9 @@ list.add(
            color = Color.RED
         )
     )
-
+// add all the slices
 val pieChart = findViewById<PieChart>(R.id.pieChart)
-pieChart.submitList(pieChartList = list, borderSize = 10f, borderColor = Color.GRAY)
+pieChart.submitList(pieChartList = list)
 // set borderSize and borderColor
 pieChart.setBorder(10f, Color.BLACK)
 ```
