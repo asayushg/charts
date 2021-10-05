@@ -44,12 +44,14 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
-        findViewById<Button>(R.id.btn).setOnClickListener {
-            findViewById<PieChart>(R.id.pieChart).visibility = View.VISIBLE
-            findViewById<PieChart>(R.id.pieChart).submitList(
-                pieChartList = list, 10f, Color.LTGRAY
-            )
+        val pieChart = findViewById<PieChart>(R.id.pieChart)
 
+        findViewById<Button>(R.id.btn).setOnClickListener {
+            pieChart.visibility = View.VISIBLE
+            pieChart.submitList(
+                pieChartList = list
+            )
+            //pieChart.setBorder(10f, Color.BLACK)
         }
     }
 }

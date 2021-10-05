@@ -17,8 +17,8 @@ class PieChart(context: Context, attrs: AttributeSet) : View(context, attrs) {
     private var size = 0
     private var animator: ValueAnimator? = null
     private var currentSweepAngle = 0f
-    private var borderSize = 10f
-    private var borderColor = Color.parseColor("#4D000000")
+    private var borderSize = 0f
+    private var borderColor = Color.parseColor("#000000")
     private var rectF: RectF = RectF(0f, 0f, 0f, 0f)
 
     companion object {
@@ -26,7 +26,7 @@ class PieChart(context: Context, attrs: AttributeSet) : View(context, attrs) {
         const val PIE_CHART_ANIMATION_DURATION = 650L
     }
 
-    var pieChartList = mutableListOf<Slice>()
+    private var pieChartList = mutableListOf<Slice>()
 
     init {
         paint.isAntiAlias = true
@@ -35,13 +35,19 @@ class PieChart(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
     fun submitList(
         pieChartList: ArrayList<Slice>,
+
+        ) {
+        this.pieChartList = pieChartList
+        computeSlices()
+    }
+
+    fun setBorder(
         borderSize: Float = this.borderSize,
         borderColor: Int = this.borderColor,
     ) {
-        this.pieChartList = pieChartList
         this.borderSize = borderSize
         this.borderColor = borderColor
-        computeSlices()
+        startPieChartAnimation()
     }
 
     private fun computeSlices() {
@@ -93,12 +99,13 @@ class PieChart(context: Context, attrs: AttributeSet) : View(context, attrs) {
             }
         }
 
-        val radius = size / 2f - borderSize
-        paint.color = borderColor
-        paint.style = Paint.Style.STROKE
-        paint.strokeWidth = borderSize
-        canvas.drawCircle(size / 2f, size / 2f, radius, paint)
-
+        if (borderSize > 0f) {
+            val radius = size / 2f - borderSize
+            paint.color = borderColor
+            paint.style = Paint.Style.STROKE
+            paint.strokeWidth = borderSize
+            canvas.drawCircle(size / 2f, size / 2f, radius, paint)
+        }
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
