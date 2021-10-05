@@ -123,11 +123,4 @@ class PieChart(context: Context, attrs: AttributeSet) : View(context, attrs) {
             (measuredHeight + size - borderSize) / 2f,
         )
     }
-
-    data class Slice(
-        var percentage: Float,
-        var color: Int,
-        var startAngle: Float = 0f,
-        var sweepSize: Float = 0f,
-    )
 }

@@ -15,8 +15,8 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <saini.ayush.chart.PieChart
-        android:id="@+id/pieChart"
+    <saini.ayush.chart.DoughnutChart
+        android:id="@+id/doughnutChart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="8dp"
