@@ -21,7 +21,11 @@ Step 2. Add the dependency
 
 <h2 id="examples">Examples :eyes:</h2>
 
+Pie Chart
 <img src="pie-chart-example.gif" width="250"/>
+
+Pie Chart with Border
+<img src="pie-chart-border-example.gif" width="250"/>
 
 <h2 id="documentation">Documentation :notebook_with_decorative_cover:</h2>
 <h4> 1. Pie Chart </h4>
@@ -35,7 +39,7 @@ Add the PieChart View in your layout as:
     .../>
 ```
 
-Create a list of Slice with percentage and color and submit to PieChart view with border width and color as:
+Create a list of Slice with percentage and color and submit to PieChart view as:
 ``` 
 val list = ArrayList<PieChart.Slice>()
 list.add(
@@ -44,7 +48,11 @@ list.add(
            color = Color.RED
         )
     )
-findViewById<PieChart>(R.id.pieChart).submitList(pieChartList = list, borderSize = 10f, borderColor = Color.GRAY)
+
+val pieChart = findViewById<PieChart>(R.id.pieChart)
+pieChart.submitList(pieChartList = list, borderSize = 10f, borderColor = Color.GRAY)
+// set borderSize and borderColor
+pieChart.setBorder(10f, Color.BLACK)
 ```
 
 ### Charts Available
